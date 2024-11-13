@@ -78,7 +78,7 @@ To train and test the model, follow these steps:
    Example command:
 
     ```bash
-    python train.py --StockName AAPL --startDate 2008-01-01 --endDate 2020-12-31 --Model_Name AMVLSTM
+    python train.py --StockName GOOGL --startDate 2004-08-19 --endDate 2020-12-31 --Model_Name AMVLSTM
     ```
 
 2. **Test the Trained Model**
@@ -86,7 +86,7 @@ To train and test the model, follow these steps:
    Run the `test.py` script to evaluate the model on new data:
 
     ```bash
-    python test.py --StockName AAPL --startDate 2021-01-01 --endDate 2024-12-31 --Model_Name AMVLSTM
+    python test.py --StockName GOOGL --startDate 2021-01-01 --endDate 2024-10-31 --Model_Name AMVLSTM
     ```
 
 ---
@@ -113,21 +113,21 @@ The attention mechanism improves the model’s ability to capture dependencies i
   </tr>
   <tr>
     <td style="border: 1px solid; padding: 8px;">LSTM</td>
-    <td style="border: 1px solid; padding: 8px;">0.7732</td>
-    <td style="border: 1px solid; padding: 8px;">168.9269</td>
-    <td style="border: 1px solid; padding: 8px;">9.3795</td>
+    <td style="border: 1px solid; padding: 8px;">0.77856</td>
+    <td style="border: 1px solid; padding: 8px;">115.9576</td>
+    <td style="border: 1px solid; padding: 8px;">8.6093</td>
   </tr>
   <tr>
     <td style="border: 1px solid; padding: 8px;">Variational LSTM</td>
-    <td style="border: 1px solid; padding: 8px;">0.7889</td>
-    <td style="border: 1px solid; padding: 8px;">157.1649</td>
-    <td style="border: 1px solid; padding: 8px;">8.9480</td>
+    <td style="border: 1px solid; padding: 8px;">0.8166</td>
+    <td style="border: 1px solid; padding: 8px;">99.1781</td>
+    <td style="border: 1px solid; padding: 8px;">7.8780</td>
   </tr>
   <tr>
     <td style="border: 1px solid; padding: 8px;">AMV-LSTM</td>
-    <td style="border: 1px solid; padding: 8px;">0.9695</td>
-    <td style="border: 1px solid; padding: 8px;">22.7102</td>
-    <td style="border: 1px solid; padding: 8px;">3.6777</td>
+    <td style="border: 1px solid; padding: 8px;">0.9779</td>
+    <td style="border: 1px solid; padding: 8px;">11.9392</td>
+    <td style="border: 1px solid; padding: 8px;">2.6519</td>
   </tr>
 </table>
 
