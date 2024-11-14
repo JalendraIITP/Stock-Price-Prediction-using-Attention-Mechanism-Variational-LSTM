@@ -97,6 +97,17 @@ The **Attention Mechanism Variational LSTM (AMV-LSTM)** model architecture compr
 - **LSTM Layers** Variational LSTM Layers inspired by Peephole LSTM
 - **Attention Mechanism** to allow the model to focus on relevant data points in the input sequence
 - **Fully Connected Layers** for final stock price prediction
+<table>
+  <tr>
+    <td>
+      <img src="https://github.com/JalendraIITP/Stock-Price-Prediction-using-Attention-Mechanism-Variational-LSTM/blob/master/Structure_of_LSTM.png" alt="LSTM" width="200"><br>
+      <img src="https://github.com/JalendraIITP/Stock-Price-Prediction-using-Attention-Mechanism-Variational-LSTM/blob/master/Structure_of_VLSTM.png" alt="VLSTM" width="200">
+    </td>
+    <td>
+      <img src="https://github.com/JalendraIITP/Stock-Price-Prediction-using-Attention-Mechanism-Variational-LSTM/blob/master/Structure_of_Attention.png" alt="Attention Block" width="200">
+    </td>
+  </tr>
+</table>
 
 The attention mechanism improves the model’s ability to capture dependencies in the time-series data, essential for accurate stock price predictions.
 
