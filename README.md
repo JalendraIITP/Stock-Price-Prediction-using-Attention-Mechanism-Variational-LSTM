@@ -44,8 +44,10 @@ The **Attention Mechanism Variational LSTM (AMV-LSTM)** model architecture compr
 The attention mechanism improves the model’s ability to capture dependencies in the time-series data, essential for accurate stock price predictions.
 
 ### Mathematical Equations
-- **VLSTM**
-  1. **Forget Gate**:
+
+#### Variational LSTM (VLSTM)
+
+1. **Forget Gate**:
    \[
    f_t = \sigma(W_{x_f} \cdot \tilde{x}_t + W_{h_f} \cdot h_{t-1} + b_f)
    \]
@@ -79,8 +81,10 @@ The attention mechanism improves the model’s ability to capture dependencies i
    \[
    h_t = o_t \odot \tanh(c_t)
    \]
-- **Attention**
-  8. **Attention Scores**:
+
+#### Attention Mechanism
+
+8. **Attention Scores**:
    \[
    a_t = V_a \cdot \tanh(W_{ax} \cdot x_t + b_a)
    \]
@@ -94,6 +98,7 @@ The attention mechanism improves the model’s ability to capture dependencies i
     \[
     \tilde{x}_t = p_t \odot x_t
     \]
+
 ---
 ## Getting Started
 
