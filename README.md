@@ -43,63 +43,6 @@ The **Attention Mechanism Variational LSTM (AMV-LSTM)** model architecture compr
 
 The attention mechanism improves the model’s ability to capture dependencies in the time-series data, essential for accurate stock price predictions.
 
-### Mathematical Equations
-
-#### Variational LSTM (VLSTM)
-
-1. **Forget Gate**:
-   \[
-   f_t = \sigma(W_{x_f} \cdot \tilde{x}_t + W_{h_f} \cdot h_{t-1} + b_f)
-   \]
-
-2. **Input Gate**:
-   \[
-   i_t = (1 - f_t) \odot g_t
-   \]
-
-3. **Intermediate Gate**:
-   \[
-   g_t = \sigma(W_{cg} \odot c_{t-1})
-   \]
-
-4. **Cell State Update**:
-   \[
-   \tilde{c}_t = \tanh(W_{xc} \cdot \tilde{x}_t + W_{hc} \odot h_{t-1} + b_c)
-   \]
-
-5. **Cell State**:
-   \[
-   c_t = f_t \odot c_{t-1} + i_t \odot \tilde{c}_t
-   \]
-
-6. **Output Gate**:
-   \[
-   o_t = \sigma(W_{xo} \cdot \tilde{x}_t + W_{ho} \cdot h_{t-1} + b_o)
-   \]
-
-7. **Hidden State**:
-   \[
-   h_t = o_t \odot \tanh(c_t)
-   \]
-
-#### Attention Mechanism
-
-8. **Attention Scores**:
-   \[
-   a_t = V_a \cdot \tanh(W_{ax} \cdot x_t + b_a)
-   \]
-
-9. **Probability Distribution**:
-   \[
-   p_t = \text{Softmax}(a_t)
-   \]
-
-10. **Weighted Input**:
-    \[
-    \tilde{x}_t = p_t \odot x_t
-    \]
-
----
 ## Getting Started
 
 ### Prerequisites
@@ -112,7 +55,7 @@ Ensure you have the following prerequisites installed:
   - **NumPy**
   - **Pandas**
   - **Matplotlib**
-
+---
 ### Installation
 
 1. **Clone this repository**:
@@ -127,7 +70,7 @@ Ensure you have the following prerequisites installed:
     ```bash
     pip install -r requirements.txt
     ```
-
+---
 ### Dataset
 
 Select any stock (e.g., AAPL, GOOGL) from Yahoo Finance and define the start and end dates for the data range you wish to use for training.
@@ -188,11 +131,12 @@ To train and test the model, follow these steps:
     <td style="border: 1px solid; padding: 8px;">2.6519</td>
   </tr>
 </table>
-
+---
 ## References
 
 This is the implementation of the paper:
 **A Novel Variant of LSTM Stock Prediction Method Incorporating Attention Mechanism**  
 _Shuai Sang and Lu Li_
 
-I attempted to implement this paper to gain a better understanding of Attention and LSTM; any feedback on mistakes is welcome.
+I attempted to implement this model to gain a better understanding of Attention and LSTM; any feedback on mistakes in my Implementation is welcome.
+*THANKS*
