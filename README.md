@@ -100,11 +100,11 @@ The **Attention Mechanism Variational LSTM (AMV-LSTM)** model architecture compr
 <table>
   <tr>
     <td>
-      <img src="https://github.com/JalendraIITP/Stock-Price-Prediction-using-Attention-Mechanism-Variational-LSTM/blob/master/Structure_of_LSTM.png" alt="LSTM" width="200"><br>
-      <img src="https://github.com/JalendraIITP/Stock-Price-Prediction-using-Attention-Mechanism-Variational-LSTM/blob/master/Structure_of_VLSTM.png" alt="VLSTM" width="200">
+      <img src="https://github.com/JalendraIITP/Stock-Price-Prediction-using-Attention-Mechanism-Variational-LSTM/blob/master/Structure_of_LSTM.png" alt="LSTM" width="600"><br>
+      <img src="https://github.com/JalendraIITP/Stock-Price-Prediction-using-Attention-Mechanism-Variational-LSTM/blob/master/Structure_of_VLSTM.png" alt="VLSTM" width="600">
     </td>
     <td>
-      <img src="https://github.com/JalendraIITP/Stock-Price-Prediction-using-Attention-Mechanism-Variational-LSTM/blob/master/Structure_of_Attention.png" alt="Attention Block" width="200">
+      <img src="https://github.com/JalendraIITP/Stock-Price-Prediction-using-Attention-Mechanism-Variational-LSTM/blob/master/Structure_of_Attention.png" alt="Attention Block" width="600">
     </td>
   </tr>
 </table>
