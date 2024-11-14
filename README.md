@@ -131,7 +131,7 @@ To train and test the model, follow these steps:
     <td style="border: 1px solid; padding: 8px;">2.6519</td>
   </tr>
 </table>
----
+
 ## References
 
 This is the implementation of the paper:
