@@ -7,12 +7,11 @@ This repository provides a robust approach to stock price prediction using an **
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Features](#features)
+- [Model Architecture](#model-architecture)
 - [Getting Started](#getting-started)
 - [Dataset](#dataset)
 - [Installation](#installation)
 - [Working Procedure](#working-procedure)
-- [Model Architecture](#model-architecture)
 - [Results](#results)
 - [References](#references)
 
@@ -22,13 +21,80 @@ This repository provides a robust approach to stock price prediction using an **
 
 Predicting stock prices is a challenging task due to the volatility and complexity of financial markets. This project leverages an **Attention LSTM model**, which allows the model to focus on relevant past data points, thereby improving prediction accuracy.
 
-## Features
+---
 
-- **Attention Mechanism**: Enhances the model’s ability to focus on critical historical data points for better predictions.
-- **LSTM Variants**: Supports standard LSTM, Variational LSTM (VLSTM), and Attention Mechanism Variational LSTM (AMV-LSTM).
-- **Visualization Tools**: Tools for visualizing stock price trends and model predictions.
-- **User-Friendly**: Comprehensive scripts for training, evaluating, and visualizing the model’s performance.
+## Model Architecture
 
+The **Attention Mechanism Variational LSTM (AMV-LSTM)** model architecture comprises:
+- **LSTM Layers** Variational LSTM Layers inspired by Peephole LSTM
+- **Attention Mechanism** to allow the model to focus on relevant data points in the input sequence
+- **Fully Connected Layers** for final stock price prediction
+<table>
+  <tr>
+    <td>
+      <img src="https://github.com/JalendraIITP/Stock-Price-Prediction-using-Attention-Mechanism-Variational-LSTM/blob/master/Structure_of_LSTM.png" alt="LSTM" width="600"><br>
+      <img src="https://github.com/JalendraIITP/Stock-Price-Prediction-using-Attention-Mechanism-Variational-LSTM/blob/master/Structure_of_VLSTM.png" alt="VLSTM" width="600">
+    </td>
+    <td>
+      <img src="https://github.com/JalendraIITP/Stock-Price-Prediction-using-Attention-Mechanism-Variational-LSTM/blob/master/Structure_of_Attention.png" alt="Attention Block" width="600">
+    </td>
+  </tr>
+</table>
+
+The attention mechanism improves the model’s ability to capture dependencies in the time-series data, essential for accurate stock price predictions.
+
+### Mathematical Equations
+- **VLSTM**
+  1. **Forget Gate**:
+   \[
+   f_t = \sigma(W_{x_f} \cdot \tilde{x}_t + W_{h_f} \cdot h_{t-1} + b_f)
+   \]
+
+2. **Input Gate**:
+   \[
+   i_t = (1 - f_t) \odot g_t
+   \]
+
+3. **Intermediate Gate**:
+   \[
+   g_t = \sigma(W_{cg} \odot c_{t-1})
+   \]
+
+4. **Cell State Update**:
+   \[
+   \tilde{c}_t = \tanh(W_{xc} \cdot \tilde{x}_t + W_{hc} \odot h_{t-1} + b_c)
+   \]
+
+5. **Cell State**:
+   \[
+   c_t = f_t \odot c_{t-1} + i_t \odot \tilde{c}_t
+   \]
+
+6. **Output Gate**:
+   \[
+   o_t = \sigma(W_{xo} \cdot \tilde{x}_t + W_{ho} \cdot h_{t-1} + b_o)
+   \]
+
+7. **Hidden State**:
+   \[
+   h_t = o_t \odot \tanh(c_t)
+   \]
+- **Attention**
+  8. **Attention Scores**:
+   \[
+   a_t = V_a \cdot \tanh(W_{ax} \cdot x_t + b_a)
+   \]
+
+9. **Probability Distribution**:
+   \[
+   p_t = \text{Softmax}(a_t)
+   \]
+
+10. **Weighted Input**:
+    \[
+    \tilde{x}_t = p_t \odot x_t
+    \]
+---
 ## Getting Started
 
 ### Prerequisites
@@ -88,30 +154,6 @@ To train and test the model, follow these steps:
     ```bash
     python test.py --StockName GOOGL --startDate 2021-01-01 --endDate 2024-10-31 --Model_Name AMVLSTM
     ```
-
----
-
-## Model Architecture
-
-The **Attention Mechanism Variational LSTM (AMV-LSTM)** model architecture comprises:
-- **LSTM Layers** Variational LSTM Layers inspired by Peephole LSTM
-- **Attention Mechanism** to allow the model to focus on relevant data points in the input sequence
-- **Fully Connected Layers** for final stock price prediction
-<table>
-  <tr>
-    <td>
-      <img src="https://github.com/JalendraIITP/Stock-Price-Prediction-using-Attention-Mechanism-Variational-LSTM/blob/master/Structure_of_LSTM.png" alt="LSTM" width="600"><br>
-      <img src="https://github.com/JalendraIITP/Stock-Price-Prediction-using-Attention-Mechanism-Variational-LSTM/blob/master/Structure_of_VLSTM.png" alt="VLSTM" width="600">
-    </td>
-    <td>
-      <img src="https://github.com/JalendraIITP/Stock-Price-Prediction-using-Attention-Mechanism-Variational-LSTM/blob/master/Structure_of_Attention.png" alt="Attention Block" width="600">
-    </td>
-  </tr>
-</table>
-
-The attention mechanism improves the model’s ability to capture dependencies in the time-series data, essential for accurate stock price predictions.
-
----
 
 ## Results
 
